@@ -24,7 +24,8 @@ header {
     background-color: #163383;
     color: #FFF;
     padding: 1em 0;
-    text-align: center;
+    text-align: right;
+    position: fixed;
 }
 
 header nav ul {
