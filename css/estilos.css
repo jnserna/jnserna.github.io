@@ -100,6 +100,47 @@ h1 {
     display: block;
     margin: auto;
 }
+
+/* Estilo para Blog */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1em;
+}
+
+.post {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post img {
+    width: 200px;
+    height: 200px;
+}
+
+.post h2 {
+    margin-top: 0;
+}
+
+.post time {
+    display: block;
+    color: #777;
+    margin-bottom: 0.5em;
+}
+
+.post a {
+    text-decoration: none;
+    color: #32b037;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+
 /* Estilo para el CV y Contacto */
 .cv-contact {
     flex: 1;
