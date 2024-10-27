@@ -75,6 +75,19 @@ section img {
     margin: 1em 0;
 }
 
+.emphasizeed {
+    font-weight: bold;
+}
+
+.emphasized {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
 /* CV and contact */
 
 /* Estilo para centrar el título */
