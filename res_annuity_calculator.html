@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annuity Conversion Simulator</title>
+  <style>
+    /* Main styling to match minimalist style */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .simulator-container {
+      width: 100%;
+      max-width: 600px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    h2 {
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+    label {
+      display: block;
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 5px;
+    }
+    .label-es {
+      font-size: 0.8rem;
+      color: #888;
+    }
+    input[type="number"], input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      color: #333;
+      background-color: #f9f9f9;
+    }
+    #pago_periodico {
+      margin-top: 1.5rem;
+      font-size: 1.25rem;
+      color: #007bff;
+      text-align: center;
+    }
+    .calc-note {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="simulator-container">
+  <h2>Annuity Calculator</h2>
+  <center><h3>Calculador de Anualidades</h3></center>
+
+  <!-- Principal Value Input -->
+  <div class="form-group">
+    <label for="principal_value">Present Value</label> <span class="label-es">Valor Presente</span>
+    <input type="number" id="principal_value" placeholder="Enter present value" required>
+  </div>
+
+  <!-- Interest Rate Input -->
+  <div class="form-group">
+    <label for="tasa_interes_rate">Tasa interés (periodic)</label> <span class="label-es">Tasa de interés (periódica)</span>
+    <input type="number" id="tasa_interes_rate" step="0.01" placeholder="Enter interest rate" required>
+  </div>
+
+  <!-- Periods Input -->
+  <div class="form-group">
+    <label for="nper">Periods</label> <span class="label-es">Períodos</span>
+    <input type="number" id="nper" placeholder="Enter periods" required>
+  </div>
+
+  <!-- Result Display -->
+  <div id="pago_periodico">Periodic Payment: $0.00</div> 
+  <span class="label-es" style="display: block; text-align: center;">Pago Periódico</span>
+
+  <!-- Calculation Note at the End -->
+  <div class="calc-note">
+    <label for="calc_note">Calculation Note</label> <span class="label-es">Nota de cálculo</span>
+    <input type="text" id="calc_note" placeholder="Add a short note about this calculation (optional)">
+  </div>
+</div>
+
+<script>
+  // Function to calculate and update the periodic payment
+  function calculateAnnuity() {
+    const principalValue = parseFloat(document.getElementById('principal_value').value);
+    const tasaInteresRate = parseFloat(document.getElementById('tasa_interes_rate').value);
+    const nper = parseInt(document.getElementById('nper').value);
+
+    if (isNaN(principalValue) || isNaN(tasaInteresRate) || isNaN(nper)) {
+      document.getElementById('pago_periodico').innerText = "Periodic Payment: $0.00";
+      return;
+    }
+
+    const pagoPeriodico = (principalValue * ((tasaInteresRate * Math.pow(1 + tasaInteresRate, nper)))) / (Math.pow(1 + tasaInteresRate, nper) - 1);
+    const formattedPagoPeriodico = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(pagoPeriodico);
+    document.getElementById('pago_periodico').innerText = `Periodic Payment: ${formattedPagoPeriodico}`;
+  }
+
+  // Add event listeners to each input to trigger calculation on change
+  document.getElementById('principal_value').addEventListener('input', calculateAnnuity);
+  document.getElementById('tasa_interes_rate').addEventListener('input', calculateAnnuity);
+  document.getElementById('nper').addEventListener('input', calculateAnnuity);
+</script>
+
+</body>
+</html>
