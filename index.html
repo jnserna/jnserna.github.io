@@ -27,19 +27,27 @@
 <body>
     <!-- Header -->
     <header>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+            <span class="lang-text">EN</span>
+        </button>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="podcasts.html">Podcasts</a></li>
-                <li><a href="songs.html">Songs</a></li>
-                <li><a href="movies-series.html">Movies - Series</a></li>
-                <li><a href="quotes.html">Quotes</a></li>
+            <ul id="nav-menu">
+                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="bio.html" data-en="Bio" data-es="Bio">Bio</a></li>
+                <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
+                <li><a href="books.html" data-en="Books" data-es="Libros">Books</a></li>
+                <li><a href="podcasts.html" data-en="Podcasts" data-es="Podcasts">Podcasts</a></li>
+                <li><a href="songs.html" data-en="Songs" data-es="Canciones">Songs</a></li>
+                <li><a href="movies-series.html" data-en="Movies - Series" data-es="Películas - Series">Movies - Series</a></li>
+                <li><a href="quotes.html" data-en="Quotes" data-es="Frases">Quotes</a></li>
+                <li><a href="now.html" data-en="Now" data-es="Ahora">Now</a></li>
                 <!--<li><a href="resources.html">Resources</a></li>-->
-                <li><a href="cv-contact.html">CV & Resources</a></li>
-                <li><a href="quotes2.html">Más frases</a></li>
+                <li><a href="cv-contact.html" data-en="CV & Resources" data-es="CV y Recursos">CV & Resources</a></li>
             </ul>
         </nav>
     </header>
@@ -52,29 +60,187 @@
             <center><img src="images/home-image.jpg" alt="Imagen Principal" width="489" height="555">
             <i><p>Location: <a href="https://www.google.com/maps/place/LVR-Archaeological+Park+Xanten/@51.6656412,6.4517745,17z/data=!3m1!4b1!4m6!3m5!1s0x47b89d51b5d3f173:0x7213bcb245d6ba10!8m2!3d51.6656412!4d6.4517745!16s%2Fg%2F121g6hkd?entry=ttu" target="_blank">LVR-Archaeological Park Xanten</a></p></i></center>
         </section>
+
+        <!-- Random Quote Widget -->
+        <div class="random-quote-widget" id="random-quote-widget">
+            <blockquote id="quote-text">"That what you persist in doing becomes easier not that the nature of the task has changed but [that] your ability to do so has increased."</blockquote>
+            <footer id="quote-author">Scott Cuttler's mother</footer>
+            <div class="quote-actions">
+                <button id="new-quote-btn" data-en="New Quote" data-es="Nueva Frase">New Quote</button>
+                <a href="quotes.html" class="view-all-link" data-en="View All Quotes" data-es="Ver Todas las Frases">View All Quotes</a>
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
     <footer>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="podcasts.html">Podcasts</a></li>
-                <li><a href="songs.html">Songs</a></li>
-                <li><a href="movies-series.html">Movies - Series</a></li>
-                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="bio.html" data-en="Bio" data-es="Bio">Bio</a></li>
+                <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
+                <li><a href="books.html" data-en="Books" data-es="Libros">Books</a></li>
+                <li><a href="podcasts.html" data-en="Podcasts" data-es="Podcasts">Podcasts</a></li>
+                <li><a href="songs.html" data-en="Songs" data-es="Canciones">Songs</a></li>
+                <li><a href="movies-series.html" data-en="Movies - Series" data-es="Películas - Series">Movies - Series</a></li>
+                <li><a href="quotes.html" data-en="Quotes" data-es="Frases">Quotes</a></li>
+                <li><a href="now.html" data-en="Now" data-es="Ahora">Now</a></li>
                 <!--<li><a href="resources.html">Resources</a></li>-->
-                <li><a href="cv-contact.html">CV & Resources</a></li>
-                <li><a href="quotes2.html">Más frases</a></li>
+                <li><a href="cv-contact.html" data-en="CV & Portfolio" data-es="CV y Portafolio">CV & Portfolio</a></li>
             </ul>
         </nav>
         
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/jsernav/" class="footer__icons" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn"></a>
             <a href="https://github.com/jnserna" class="footer__icons" target="_blank"><img src="images/github.svg" alt="Github"></a>
+    <script src="js/menu.js"></script>
+    <script>
+        // Quotes data extracted from quotes.html
+        const quotes = [
+            {
+                text: "That what you persist in doing becomes easier not that the nature of the task has changed but [that] your ability to do so has increased.",
+                author: "Scott Cuttler's mother"
+            },
+            {
+                text: "I'm someone who doesn't accept himself very much. So, through challenge I can find these short moments of self-acceptance, which is a very nice feeling.",
+                author: "Nico Rosberg"
+            },
+            {
+                text: "It has been said, 'time heals all wounds.' I do not agree. The wounds remain. In time, the mind, protecting its sanity, covers them with scar tissue and the pain lessens. But it is never gone.",
+                author: "Rose Fitzgerald Kennedy"
+            },
+            {
+                text: "Victory has a hundred fathers, but defeat is an orphan. Ask not what your country can do for you. Ask what you can do for your country.",
+                author: "John F. Kennedy"
+            },
+            {
+                text: "Life is what happens to you while you're busy making other plans.",
+                author: "John Lennon"
+            },
+            {
+                text: "Happiness = reality – expectations",
+                author: "Yuval Noah Harari (or Tom Magliozzi?)"
+            },
+            {
+                text: "Simplicity is the ultimate sophistication.",
+                author: "Leonardo Da Vinci"
+            },
+            {
+                text: "Aquello que hagas con persistencia se vuelve más fácil, no porque la naturaleza de la tarea cambie, sino porque se ha incrementado tu habilidad para realizarla.",
+                author: "Mamá de Scott Cutler"
+            },
+            {
+                text: "Soy alguien que no se acepta mucho a sí mismo. Por ende, a través de retos encuentro esos pequeños momentos de auto aceptación, lo cual es un sentimiento agradable.",
+                author: "Nico Rosberg"
+            },
+            {
+                text: "Dicen que el tiempo cura las heridas. No estoy de acuerdo. Las heridas perduran. Con el tiempo la mente, para proteger su cordura, las cubre con cicatrices, y el dolor se atenúa, pero nunca desaparecen.",
+                author: "Rose Fitzgerald Kennedy"
+            },
+            {
+                text: "La victoria tiene cien padres, y la derrota es huérfana. No preguntes qué puede hacer tu país por ti. Pregunta qué puedes hacer tú por tu país.",
+                author: "John F. Kennedy"
+            },
+            {
+                text: "La vida es aquello que te pasa mientras estás ocupado haciendo otros planes.",
+                author: "John Lennon"
+            },
+            {
+                text: "Felicidad = realidad – expectativa.",
+                author: "Yuval Noah Harari (or Tom Magliozzi?)"
+            },
+            {
+                text: "La simplicidad es la máxima sofisticación.",
+                author: "Leonardo Da Vinci"
+            },
+            {
+                text: "El ciclismo es como la vida en muchas cosas. Pero una de las que se parece mucho es en el hecho que vamos cargando con nuestras cosas: nuestros éxitos, nuestros fracasos, nuestras deudas, las cosas que postergamos, lo que dejamos de hacer. Todos, en la vida y en la bicicleta, vamos cargando con nosotros mismos: nuestras virtudes, nuestros defectos, nuestros traumas, la gente a la que hemos ayudado, la gente a la que hemos perjudicado, queriendo o sin querer. Todo eso lo cargamos encima. No tiene peso físico, como en la bicicleta, pero sí pesa dentro tu conciencia, dentro de tu cuerpo, en tu cabeza. Todos vamos cargando con nuestra maleta, con nuestra cruz. Hay pesos de los que podemos deshacernos, hay pesos de los que no. En la vida y en la bicicleta, lo importante es ser conscientes de la carga.",
+                author: "Sinar Alvarado"
+            },
+            {
+                text: "Dogma es una creencia con los ojos cerrados.",
+                author: ""
+            },
+            {
+                text: "Sesgo de confirmación: dar prioridad a la información que confirma nuestras propias creencias.",
+                author: ""
+            },
+            {
+                text: "El ser humano tiende a sobreestimar las probabilidades de fracaso, y subestimar las probabilidades de éxito.",
+                author: ""
+            }
+        ];
+
+        // Random quote functionality
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            return quotes[randomIndex];
+        }
+
+        function displayQuote(quote) {
+            const quoteText = document.getElementById('quote-text');
+            const quoteAuthor = document.getElementById('quote-author');
+
+            quoteText.textContent = `"${quote.text}"`;
+            quoteAuthor.textContent = quote.author;
+        }
+
+        // Initialize with a random quote
+        displayQuote(getRandomQuote());
+
+        // New quote button functionality
+        document.getElementById('new-quote-btn').addEventListener('click', () => {
+            displayQuote(getRandomQuote());
+        });
+
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.querySelector('.lang-text');
+
+        // Check for saved language preference or default to English
+        const currentLang = localStorage.getItem('language') || 'en';
+        document.documentElement.lang = currentLang;
+        updateLanguage(currentLang);
+
+        function updateLanguage(lang) {
+            // Update toggle button text
+            langText.textContent = lang.toUpperCase();
+
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-en][data-es]');
+            elements.forEach(element => {
+                element.textContent = element.getAttribute(`data-${lang}`);
+            });
+
+            // Update document language
+            document.documentElement.lang = lang;
+        }
+
+        langToggle.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('language') || 'en';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+
+            localStorage.setItem('language', newLang);
+            updateLanguage(newLang);
+        });
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
             <a href="https://www.kaggle.com/juanserna" class="footer__icons" target="_blank"><img src="./images/kaggle.svg" alt="kaggle"></a>
             <a href="https://medium.com/@jn.serna" class="footer__icons" target="_blank"><img src="images/medium.svg" alt="Medium"></a>
             <a href="https://open.spotify.com/user/jn.serna?si=57e5cd53901d416c" class="footer__icons" target="_blank"><img src="images/spotify.svg" alt="Spotify"></a>

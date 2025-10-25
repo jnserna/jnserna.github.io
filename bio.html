@@ -27,19 +27,27 @@
 <body>
     <!-- Header -->
     <header>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+            <span class="lang-text">EN</span>
+        </button>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="podcasts.html">Podcasts</a></li>
-                <li><a href="songs.html">Songs</a></li>
-                <li><a href="movies-series.html">Movies - Series</a></li>
-                <li><a href="quotes.html">Quotes</a></li>
+            <ul id="nav-menu">
+                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="bio.html" data-en="Bio" data-es="Bio">Bio</a></li>
+                <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
+                <li><a href="books.html" data-en="Books" data-es="Libros">Books</a></li>
+                <li><a href="podcasts.html" data-en="Podcasts" data-es="Podcasts">Podcasts</a></li>
+                <li><a href="songs.html" data-en="Songs" data-es="Canciones">Songs</a></li>
+                <li><a href="movies-series.html" data-en="Movies - Series" data-es="Películas - Series">Movies - Series</a></li>
+                <li><a href="quotes.html" data-en="Quotes" data-es="Frases">Quotes</a></li>
+                <li><a href="now.html" data-en="Now" data-es="Ahora">Now</a></li>
                 <!--<li><a href="resources.html">Resources</a></li>-->
-                <li><a href="cv-contact.html">CV & Resources</a></li>
-                <li><a href="quotes2.html">Más frases</a></li>
+                <li><a href="cv-contact.html" data-en="CV & Resources" data-es="CV y Recursos">CV & Resources</a></li>
             </ul>
         </nav>
     </header>
@@ -92,22 +100,88 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="podcasts.html">Podcasts</a></li>
-                <li><a href="songs.html">Songs</a></li>
-                <li><a href="movies-series.html">Movies - Series</a></li>
-                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="bio.html" data-en="Bio" data-es="Bio">Bio</a></li>
+                <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
+                <li><a href="books.html" data-en="Books" data-es="Libros">Books</a></li>
+                <li><a href="podcasts.html" data-en="Podcasts" data-es="Podcasts">Podcasts</a></li>
+                <li><a href="songs.html" data-en="Songs" data-es="Canciones">Songs</a></li>
+                <li><a href="movies-series.html" data-en="Movies - Series" data-es="Películas - Series">Movies - Series</a></li>
+                <li><a href="quotes.html" data-en="Quotes" data-es="Frases">Quotes</a></li>
+                <li><a href="now.html" data-en="Now" data-es="Ahora">Now</a></li>
                 <!--<li><a href="resources.html">Resources</a></li>-->
-                <li><a href="cv-contact.html">CV & Resources</a></li>
-                <li><a href="quotes2.html">Más frases</a></li>
+                <li><a href="cv-contact.html" data-en="CV & Portfolio" data-es="CV y Portafolio">CV & Portfolio</a></li>
             </ul>
         </nav>
         <div class="social-icons">
             <a href="https://www.linkedin.com/in/jsernav/" class="footer__icons" target="_blank"><img src="images/linkedin.svg" alt="LinkedIn"></a>
             <a href="https://github.com/jnserna" class="footer__icons" target="_blank"><img src="images/github.svg" alt="Github"></a>
+    <script src="js/menu.js"></script>
+    <script>
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.querySelector('.lang-text');
+
+        // Check for saved language preference or default to English
+        const currentLang = localStorage.getItem('language') || 'en';
+        document.documentElement.lang = currentLang;
+        updateLanguage(currentLang);
+
+        function updateLanguage(lang) {
+            // Update toggle button text
+            langText.textContent = lang.toUpperCase();
+
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-en][data-es]');
+            elements.forEach(element => {
+                element.textContent = element.getAttribute(`data-${lang}`);
+            });
+
+            // Update document language
+            document.documentElement.lang = lang;
+        }
+
+        langToggle.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('language') || 'en';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+
+            localStorage.setItem('language', newLang);
+            updateLanguage(newLang);
+        });
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
             <a href="https://www.kaggle.com/juanserna" class="footer__icons" target="_blank"><img src="./images/kaggle.svg" alt="kaggle"></a>
             <a href="https://medium.com/@jn.serna" class="footer__icons" target="_blank"><img src="images/medium.svg" alt="Medium"></a>
             <a href="https://open.spotify.com/user/jn.serna?si=57e5cd53901d416c" class="footer__icons" target="_blank"><img src="images/spotify.svg" alt="Spotify"></a>

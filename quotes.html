@@ -27,26 +27,34 @@
 <body>
     <!-- Header -->
     <header>
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+            <span class="lang-text">EN</span>
+        </button>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="podcasts.html">Podcasts</a></li>
-                <li><a href="songs.html">Songs</a></li>
-                <li><a href="movies-series.html">Movies - Series</a></li>
-                <li><a href="quotes.html">Quotes</a></li>
+            <ul id="nav-menu">
+                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="bio.html" data-en="Bio" data-es="Bio">Bio</a></li>
+                <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
+                <li><a href="books.html" data-en="Books" data-es="Libros">Books</a></li>
+                <li><a href="podcasts.html" data-en="Podcasts" data-es="Podcasts">Podcasts</a></li>
+                <li><a href="songs.html" data-en="Songs" data-es="Canciones">Songs</a></li>
+                <li><a href="movies-series.html" data-en="Movies - Series" data-es="Películas - Series">Movies - Series</a></li>
+                <li><a href="quotes.html" data-en="Quotes" data-es="Frases">Quotes</a></li>
+                <li><a href="now.html" data-en="Now" data-es="Ahora">Now</a></li>
                 <!--<li><a href="resources.html">Resources</a></li>-->
-                <li><a href="cv-contact.html">CV & Resources</a></li>
-                <li><a href="quotes2.html">Más frases</a></li>
+                <li><a href="cv-contact.html" data-en="CV & Portfolio" data-es="CV y Portafolio">CV & Portfolio</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main>
-        <center><h2>Mi lugar favorito en el mundo</h2></center>     
+        <center><h2>Mi lugar favorito en el mundo</h2></center>
         <div style="display: flex;"></div>
             <div style="flex: 1; padding: 5px; border-right: 1px solid #FFFFFF; text-align: center;">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11800.923536855098!2d-71.0342146!3d42.316274!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e37ae468290749%3A0x911b0e0aaf975e24!2sBiblioteca%20y%20Museo%20Presidencial%20de%20John%20F.%20Kennedy!5e0!3m2!1ses!2sus!4v1718402895306!5m2!1ses!2sus" style="flex: 1; border: 0;" width="400" height="320"; allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -55,9 +63,9 @@
             <div class="quotes-content">
                 <center><h2>Quotes</h2></center>
                 <div style="display: flex;">
-                    <!-- Columna Izquierda: Frases en Español -->
+                    <!-- Columna Izquierda: Frases en Inglés -->
                     <div style="flex: 1; padding: 5px; border-right: 1px solid #ccc;">
-                        <!--<h2>Frases Destacadas en Español</h2>-->
+                        <!--<h2>Highlighted Quotes in English</h2>-->
                         <blockquote>
                             <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"That what you persist in doing becomes easier not that the nature of the task has changed but [that] your ability to do so has increased."</p>
                             <footer>Scott Cuttler’s mother</footer>
@@ -67,7 +75,7 @@
                             <footer>Nico Rosberg</footer>
                         </blockquote>
                         <blockquote>
-                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"It has been said, “time heals all wounds.” I do not agree. The wounds remain. In time, the mind, protecting its sanity, covers them with scar tissue and the pain lessens. But it is never gone."</p>
+                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"It has been said, "time heals all wounds." I do not agree. The wounds remain. In time, the mind, protecting its sanity, covers them with scar tissue and the pain lessens. But it is never gone."</p>
                             <footer>Rose Fitzgerald Kennedy</footer>
                         </blockquote>
                         <blockquote>
@@ -77,18 +85,22 @@
                             <footer>John F. Kennedy</footer>
                         </blockquote>
                         <blockquote>
-                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"Life is what happens to you while you’re busy making other plans."</p>
+                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"Life is what happens to you while you're busy making other plans."</p>
                             <footer>John Lennon</footer>
                         </blockquote>
                         <blockquote>
                             <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"Happiness = reality – expectations"</p>
                             <footer>Yuval Noah Harari (or Tom Magliozzi?)</footer>
                         </blockquote>
+                        <blockquote>
+                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"Simplicity is the ultimate sophistication."</p>
+                            <footer>Leonardo Da Vinci</footer>
+                        </blockquote>
                     </div>
-                
-                    <!-- Columna Derecha: Frases en Inglés -->
+
+                    <!-- Columna Derecha: Frases en Español -->
                     <div style="flex: 1; padding: 5px;">
-                        <!--<h2>Highlighted Quotes in English</h2>-->
+                        <!--<h2>Frases Destacadas en Español</h2>-->
                         <blockquote>
                             <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"Aquello que hagas con persistencia se vuelve más fácil, no porque la naturaleza de la tarea cambie, sino porque se ha incrementado tu habilidad para realizarla."</p>
                             <footer>Mamá de Scott Cutler</footer>
@@ -105,7 +117,7 @@
                             <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"La victoria tiene cien padres, y la derrota es huérfana.
 
                             No preguntes qué puede hacer tu país por ti. Pregunta qué puedes hacer tú por tu país."</p>
-                        
+
                             <!--<p>John F. Kennedy</p>-->
                             <footer>John F. Kennedy</footer>
                         </blockquote>
@@ -118,12 +130,28 @@
                             <footer>Yuval Noah Harari (or Tom Magliozzi?)</footer>
                         </blockquote>
                         <blockquote>
+                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"La simplicidad es la máxima sofisticación."</p>
+                            <footer>Leonardo Da Vinci</footer>
+                        </blockquote>
+                        <blockquote>
                             <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">"El ciclismo es como la vida en muchas cosas. Pero una de las que se parece mucho es en el hecho que vamos cargando con nuestras cosas: nuestros éxitos, nuestros fracasos, nuestras deudas, las cosas que postergamos, lo que dejamos de hacer. Todos, en la vida y en la bicicleta, vamos cargando con nosotros mismos: nuestras virtudes, nuestros defectos, nuestros traumas, todo lo que hemos hecho o hemos dejado de hacer, la gente a la que hemos ayudado, la gente a la que hemos perjudicado, queriendo o sin querer. Todo eso lo cargamos encima. No tiene peso físico, como en la bicicleta, pero sí pesa dentro tu conciencia, dentro de tu cuerpo, en tu cabeza. Todos vamos cargando con nuestra maleta, con nuestra cruz. Hay pesos de los que podemos deshacernos, hay pesos de los que no. En la vida y en la bicicleta, lo importante es ser conscientes de la carga."</p>
                             <footer>Sinar Alvarado</footer>
                         </blockquote>
+                        <blockquote>
+                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">Dogma es una creencia con los ojos cerrados.</p>
+                            <footer></footer>
+                        </blockquote>
+                        <blockquote>
+                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">Sesgo de confirmación: dar prioridad a la información que confirma nuestras propias creencias.</p>
+                            <footer></footer>
+                        </blockquote>
+                        <blockquote>
+                            <p style="font-style: normal; font-family: 'Arial', sans-serif; font-size: 14px;">El ser humano tiende a sobreestimar las probabilidades de fracaso, y subestimar las probabilidades de éxito.</p>
+                            <footer></footer>
+                        </blockquote>
                     </div>
                 </div>
-                
+
             </div>
         </section>
     </main>
@@ -132,17 +160,67 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="bio.html">Bio</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="books.html">Books</a></li>
-                <li><a href="podcasts.html">Podcasts</a></li>
-                <li><a href="songs.html">Songs</a></li>
-                <li><a href="movies-series.html">Movies - Series</a></li>
-                <li><a href="quotes.html">Quotes</a></li>
+                <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+                <li><a href="bio.html" data-en="Bio" data-es="Bio">Bio</a></li>
+                <li><a href="blog.html" data-en="Blog" data-es="Blog">Blog</a></li>
+    <script src="js/menu.js"></script>
+    <script>
+        // Language toggle functionality
+        const langToggle = document.getElementById('lang-toggle');
+        const langText = document.querySelector('.lang-text');
+
+        // Check for saved language preference or default to English
+        const currentLang = localStorage.getItem('language') || 'en';
+        document.documentElement.lang = currentLang;
+        updateLanguage(currentLang);
+
+        function updateLanguage(lang) {
+            // Update toggle button text
+            langText.textContent = lang.toUpperCase();
+
+            // Update all elements with data attributes
+            const elements = document.querySelectorAll('[data-en][data-es]');
+            elements.forEach(element => {
+                element.textContent = element.getAttribute(`data-${lang}`);
+            });
+
+            // Update document language
+            document.documentElement.lang = lang;
+        }
+
+        langToggle.addEventListener('click', () => {
+            const currentLang = localStorage.getItem('language') || 'en';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+
+            localStorage.setItem('language', newLang);
+            updateLanguage(newLang);
+        });
+
+        // Hamburger menu functionality
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+                <li><a href="books.html" data-en="Books" data-es="Libros">Books</a></li>
+                <li><a href="podcasts.html" data-en="Podcasts" data-es="Podcasts">Podcasts</a></li>
+                <li><a href="songs.html" data-en="Songs" data-es="Canciones">Songs</a></li>
+                <li><a href="movies-series.html" data-en="Movies - Series" data-es="Películas - Series">Movies - Series</a></li>
+                <li><a href="quotes.html" data-en="Quotes" data-es="Frases">Quotes</a></li>
+                <li><a href="now.html" data-en="Now" data-es="Ahora">Now</a></li>
                 <!--<li><a href="resources.html">Resources</a></li>-->
-                <li><a href="cv-contact.html">CV and Resources</a></li>
-                <li><a href="quotes2.html">Más frases</a></li>
+                <li><a href="cv-contact.html" data-en="CV & Portfolio" data-es="CV y Portafolio">CV & Portfolio</a></li>
             </ul>
         </nav>
         <div class="social-icons">
