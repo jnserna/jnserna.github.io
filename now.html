@@ -77,6 +77,11 @@
                 I'm also super dedicated to help young people in career advice. I started doing that right after completing 10 years of professional work experience.
             </p>
 
+            <h3 data-en="Personal" data-es="Personal">Personal</h3>
+            <p data-en="Learning to navigate life after the loss (death) of a very very dear family member." data-es="Aprendiendo a navegar la vida luego de la pérdida (muerte) de un familiar muy muy querido.">
+                Learning to navigate life after the loss (death) of a very very dear family member.
+            </p>
+
             <h3 data-en="Skills" data-es="Habilidades">Skills</h3>
             <p data-en="Playing around with AI and AI-powered tools." data-es="Experimentando con IA y herramientas impulsadas por IA.">
                 Playing around with AI and AI-powered tools.
@@ -96,6 +101,9 @@
             <p data-en="70% Medellín (current) - 30% Barcelona." data-es="70% Medellín (actual) - 30% Barcelona.">
                 70% Medellín (current) - 30% Barcelona.
             </p>
+
+            <h3 data-en="Last update" data-es="Última actualización">Last update</h3>
+            <p data-en="Oct 25, 2025" data-es="25 de octubre de 2025">Oct 25, 2025</p>
         </section>
     </main>
 
@@ -141,8 +149,8 @@
         updateLanguage(currentLang);
 
         function updateLanguage(lang) {
-            // Update toggle button text
-            langText.textContent = lang.toUpperCase();
+            // Update toggle button text to show opposite language
+            langText.textContent = lang === 'en' ? 'ES' : 'EN';
 
             // Update all elements with data attributes
             const elements = document.querySelectorAll('[data-en][data-es]');

@@ -160,8 +160,8 @@
         updateLanguage(currentLang);
 
         function updateLanguage(lang) {
-            // Update toggle button text
-            langText.textContent = lang.toUpperCase();
+            // Update toggle button text to show opposite language
+            langText.textContent = lang === 'en' ? 'ES' : 'EN';
 
             // Update all elements with data attributes
             const elements = document.querySelectorAll('[data-en][data-es]');
